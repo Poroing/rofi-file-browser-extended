@@ -10,7 +10,8 @@
 #include "util.h"
 #include "icons.h"
 
-void init_icons ( FileBrowserIconData *id ) {
+void init_icons ( FileBrowserIconData *id )
+{
     static const char * const fallback_icon_themes[] = {
         FALLBACK_ICON_THEMES,
         NULL
@@ -20,7 +21,8 @@ void init_icons ( FileBrowserIconData *id ) {
     id->icons = g_hash_table_new_full ( g_str_hash, g_str_equal, g_free, ( void (*) (void *) ) cairo_surface_destroy );
 }
 
-void destroy_icons ( FileBrowserIconData *id ) {
+void destroy_icons ( FileBrowserIconData *id )
+{
     if ( id->icons != NULL ) {
         g_hash_table_destroy ( id->icons );
     }

@@ -24,7 +24,8 @@ FBKey get_key_for_name ( char* key_str )
     return KEY_NONE;
 }
 
-char *get_name_of_key ( FBKey key ) {
+char *get_name_of_key ( FBKey key )
+{
     switch ( key ) {
         case KB_ACCEPT_ALT:
             return g_strdup ( "kb-accept-alt" );
@@ -38,7 +39,8 @@ char *get_name_of_key ( FBKey key ) {
     }
 }
 
-FBKey get_key_for_rofi_mretv ( int mretv ) {
+FBKey get_key_for_rofi_mretv ( int mretv )
+{
     if ( mretv & MENU_CUSTOM_ACTION ) {
         return KB_ACCEPT_ALT;
     } else if ( mretv & MENU_QUICK_SWITCH ) {

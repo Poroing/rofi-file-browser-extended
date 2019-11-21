@@ -262,7 +262,8 @@ skip_file:
     }
 }
 
-void load_files_from_stdin ( FileBrowserFileData *fd ) {
+void load_files_from_stdin ( FileBrowserFileData *fd )
+{
     free_files ( fd );
     size_t current_dir_len = strlen ( fd->current_dir );
 

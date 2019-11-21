@@ -35,7 +35,6 @@ void set_user_cmds ( char **cmd_strs, FileBrowserModePrivateData *pd )
     static int icon_sep_len = strlen ( OPEN_CUSTOM_CMD_ICON_SEP );
     static int name_sep_len = strlen ( OPEN_CUSTOM_CMD_NAME_SEP );
 
-    /* Custom commands for open-custom prompt. */
     int num_cmds = count_strv ( ( const char ** ) cmd_strs );
     FBCmd *cmds = g_malloc ( num_cmds * sizeof ( FBCmd ) );
 
@@ -72,8 +71,8 @@ void search_path_for_cmds ( FileBrowserModePrivateData *pd )
 
     GHashTable *table = g_hash_table_new_full ( g_str_hash, g_str_equal, g_free, NULL );
 
+    /* Search all directories in $PATH for files and insert file names into the hash table. */
     char* dirname = strtok ( path, G_SEARCHPATH_SEPARATOR_S );
-
     while ( dirname != NULL ) {
         GDir *dir = g_dir_open ( dirname, 0, NULL );
 
